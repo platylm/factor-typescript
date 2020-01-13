@@ -11,3 +11,11 @@ export default function primeFactor(number:number, callback:Function){ // return
     }
     callback(result)
 }
+
+export const primeFactorPromise = function(number:number):Promise<number[]> { //promise เป็นการหุ้ม function ของ callback อีกที (promise.then == result or .catch == error) แยกผลลัพธ์กับ error ออกจากัน
+    return new Promise((resolve,reject) =>{
+        primeFactor(number,function(result:number[]){
+            resolve(result)
+        })
+    })
+}
