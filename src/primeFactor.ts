@@ -1,12 +1,13 @@
 export default function primeFactor(number:number, callback:Function){ // return ผ่าน function ใช้ callback
     let result: number[] = new Array()
-    while(number%2 == 0){
-        result.push(2)
-        number /= 2
-    }
-    while(number%3 == 0){
-        result.push(3)
-        number /= 3
+    let divider = 2
+    while(number != 1){
+        if(number % divider == 0){
+            result.push(divider)
+            number /= divider
+        } else{
+            divider++
+        }
     }
     callback(result)
 }
