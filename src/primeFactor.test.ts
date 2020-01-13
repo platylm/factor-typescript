@@ -27,4 +27,31 @@ describe('prime factor', () => {
             expect(actual).toEqual(expected)
         }) 
     });
+
+    it('Input 6 Should be array [2,3]', () => {
+        const expected = [2,3]
+        const number = 6
+
+        primeFactor(number,function(actual:number){
+            expect(actual).toEqual(expected)
+        }) 
+    });
+
+    it('Input 9 Should be array [3,3]', () => {
+        const expected = [3,3]
+        const number = 9
+
+        primeFactor(number,function(actual:number){
+            expect(actual).toEqual(expected)
+        }) 
+    });
+
+    it('Input 12 Should be array [2,2,3]', () => {
+        const expected = [2,2,3]
+        const number = 12
+
+        primeFactor(number,function(actual:number){
+            expect(actual).toEqual(expected)
+        }) 
+    });
 })
